@@ -6,8 +6,6 @@ class UserTest < ActiveSupport::TestCase
     {
         username: "Alex",
         password: "password",
-        current_points: 0,
-        redeemed_points: 0,
         role: 0
     }
 
@@ -28,8 +26,6 @@ class UserTest < ActiveSupport::TestCase
   test "it cannot create a user without a username" do
     result = User.new(username: nil,
                       password: "password",
-                      current_points: 0,
-                      redeemed_points: 0,
                       role: 0)
 
     assert result.invalid?
@@ -38,8 +34,6 @@ class UserTest < ActiveSupport::TestCase
   test "it cannot create a fan without an password" do
     result = User.new(username: "Alex",
                       password: nil,
-                      current_points: 0,
-                      redeemed_points: 0,
                       role: 0)
 
     assert result.invalid?
