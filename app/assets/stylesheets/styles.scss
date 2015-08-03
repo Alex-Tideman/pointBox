@@ -3,14 +3,30 @@ body {
   background: #25cb3c;
 }
 
+.flash {
+  text-align:center;
+}
+
 #login_title {
   text-align: center;
-  text-shadow: black 2px 3px 3px;
+  text-shadow: black 1px 2px 2px;
 }
 
 #login_intro {
   text-align: center;
 }
+
+#logo {
+  border-style: solid;
+  border-width: 5px;
+  padding: 5px;
+}
+
+
+#spacer_title {
+  padding-left: 36%;
+}
+
 
 #user_login {
 
@@ -21,7 +37,7 @@ body {
   margin-bottom: 10%;
   height: 40px;
   text-align: center;
-  border: solid;
+  border-style: hidden;
   background: black;
   color: yellow;
 }

@@ -1,0 +1,33 @@
+<h1 id="login_title"><%= @user.username %>'s Dashboard</h1>
+
+<div id="user_dashboard" class="demo-grid-3 mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col"><h5>Points Available: <%= @user.current_points %></h5></div>
+  <div class="mdl-cell mdl-cell--4-col"><h5><%= link_to "All Rewards", rewards_path %></h5></div>
+  <div class="mdl-cell mdl-cell--4-col"><h5>Points Redeemed: <%= @user.redeemed_points %></h5></div>
+</div>
+
+<div id="rewards" class="mdl-badge" data-badge="<%= @user.rewards.size %>"><h3>My Rewards</h3></div>
+
+<div class="grid_background">
+  <div class="demo-grid-1 mdl-grid">
+    <% if @user.rewards.size == 0 %>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div id="grid_box" class="mdl-card mdl-shadow--2dp demo-card-wide">
+            <div id="grid_title" class="mdl-card__title">
+              <h2 class="mdl-card__title-text">No rewards yet!</h2>
+            </div>
+          </div>
+        </div>
+    <% else %>
+        <% @user.rewards.each do |reward| %>
+            <div class="mdl-cell mdl-cell--4-col">
+              <div id="grid_box" class="mdl-card mdl-shadow--2dp demo-card-wide">
+                <div id="grid_title" class="mdl-card__title">
+                  <h2 class="mdl-card__title-text"><%= reward.reward_type %></h2>
+                </div>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
