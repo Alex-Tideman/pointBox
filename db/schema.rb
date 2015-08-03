@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20150730202851) do
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.integer  "current_points"
-    t.integer  "redeemed_points"
-    t.integer  "role"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "current_points",  default: 0
+    t.integer  "redeemed_points", default: 0
+    t.integer  "role",            default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end

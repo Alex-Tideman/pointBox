@@ -1,0 +1,5 @@
+<h3><%= @reward.reward_type %></h3>
+<h3>Value: <%= @reward.value %></h3>
+
+<h5><%= link_to "Redeem", reward_redeems_path(@reward), method: :post %></h5>
+<h5><%= link_to "Back to Rewards", rewards_path %></h5>

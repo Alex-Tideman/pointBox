@@ -1,0 +1,7 @@
+<h1><%= @reward.reward_type %></h1>
+
+<h3><%= @reward.value %> points</h3>
+
+<h5><%= link_to "Edit Reward", edit_admin_reward_path %></h5>
+<h5><%= link_to "Remove Reward", admin_reward_path(@reward), method: :delete %></h5>
+<h4><%= link_to "All Rewards", admin_rewards_path %></h4>

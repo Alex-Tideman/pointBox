@@ -3,9 +3,9 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username
       t.string :password_digest
-      t.integer :current_points
-      t.integer :redeemed_points
-      t.integer :role
+      t.integer :current_points, default: 0
+      t.integer :redeemed_points, default: 0
+      t.integer :role, default: 0
 
       t.timestamps null: false
     end
