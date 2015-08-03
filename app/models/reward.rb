@@ -3,5 +3,7 @@ class Reward < ActiveRecord::Base
             uniqueness: true
   validates :value, presence: true
 
-  has_many :rewards, through: :user_rewards
+  has_many :user_rewards
+  has_many :users, through: :user_rewards
+
 end

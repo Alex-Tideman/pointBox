@@ -11,7 +11,7 @@
   <div class="mdl-layout__header-row">
     <!-- Title -->
     <% if current_user %>
-        <span class="mdl-layout-title"><%= current_user.username %></span>
+        <span class="mdl-layout-title"><%= link_to current_user.username, user_path(current_user) %></span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->

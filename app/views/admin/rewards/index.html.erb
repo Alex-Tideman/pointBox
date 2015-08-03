@@ -1,0 +1,9 @@
+<h1>All Rewards:</h1>
+<% @rewards.each do |reward| %>
+    <ul>
+      <li><%= link_to reward.reward_type, admin_reward_path(reward) %> worth <%= reward.value %> points</li>
+    </ul>
+<% end %>
+
+<h5><%= link_to "Create New Reward", new_admin_reward_path %></h5>
+<h5><%= link_to "Admin Dashboard", admin_dashboard_path %></h5>

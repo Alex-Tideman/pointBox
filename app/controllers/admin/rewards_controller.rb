@@ -1,4 +1,4 @@
-class Admin::RewardsController < AdminController
+class Admin::RewardsController < Admin::BaseController
 
   def index
     @rewards = Reward.all
@@ -15,7 +15,7 @@ class Admin::RewardsController < AdminController
   def create
     @reward = Reward.new(reward_params)
     if @reward.save
-      redirect_to @reward
+      redirect_to admin_rewards_path
     else
       flash[:error] = "Invalid input - Please try creating reward again"
       render :new
@@ -30,10 +30,16 @@ class Admin::RewardsController < AdminController
     @reward = Reward.find(params[:id])
     if @reward.update(reward_type: params[:reward][:reward_type],
                       value: params[:reward][:value])
-      redirect_to @reward
+      redirect_to admin_rewards_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @reward = Reward.find(params[:id])
+    @reward.destroy
+    redirect_to admin_rewards_path
   end
 
   private

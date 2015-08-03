@@ -1,6 +1,17 @@
-<h1>All Rewards:</h1>
-<% @rewards.each do |reward| %>
-    <ul>
-        <li><%= reward.reward_type %> worth <%= reward.value %> points</li>
-    </ul>
-<% end %>
+<div id="rewards" class="mdl-badge" data-badge="<%= @rewards.size %>"><h3>All Rewards</h3></div>
+
+<div class="grid_background">
+  <div class="demo-grid-1 mdl-grid">
+    <% @rewards.each do |reward| %>
+        <div class="mdl-cell mdl-cell--4-col">
+          <div id="grid_box" class="mdl-card mdl-shadow--2dp demo-card-wide">
+            <div class="mdl-card__title"><h3><%= link_to reward.reward_type, reward_path(reward) %></h3>
+            </div>
+            <div class="mdl-card__supporting-text">
+                Value of <%= reward.value %> points
+            </div>
+          </div>
+        </div>
+  <% end %>
+  </div>
+</div>
