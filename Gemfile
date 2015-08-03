@@ -34,7 +34,6 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  require 'minitest/pride'
   gem 'capybara'
   gem 'launchy'
 end
